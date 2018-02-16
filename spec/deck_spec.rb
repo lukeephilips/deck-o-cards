@@ -38,4 +38,13 @@ describe Deck do
       expect(@new_deck.cards.length).to eq 52
     end
   end
+  describe '#draw' do
+    it "returns a card" do
+      expect(@new_deck.draw.class).to eq Card
+    end
+    it "returns empty when there are no more cards" do
+      @new_deck.cards.clear
+      expect(@new_deck.draw).to eq 'no more cards'
+    end
+  end
 end
