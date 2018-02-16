@@ -33,11 +33,9 @@ class Deck
 
   def build_deck
     new_deck = []
-    i = 0
     [:spades, :clubs, :hearts, :diamonds].each do |suit|
       ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'].each do |value|
-        new_deck.push Card.new({suit: suit, value: value, index: i})
-        i += 1
+        new_deck.push Card.new({suit: suit, value: value})
       end
     end
     return new_deck
