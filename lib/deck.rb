@@ -11,7 +11,7 @@ class Deck
   def current
     @current
   end
-
+  
   def draw
     if @cards.any?
       return @current = @cards.shift
@@ -19,7 +19,6 @@ class Deck
       return 'no more cards'
     end
   end
-
   def shuffle
     @cards.length.times do |i|
       rand_i = rand @cards.length - i
@@ -30,7 +29,6 @@ class Deck
   end
 
   private
-
   def build_deck
     new_deck = []
     [:spades, :clubs, :hearts, :diamonds].each do |suit|
