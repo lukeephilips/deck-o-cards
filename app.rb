@@ -1,2 +1,5 @@
 require './lib/deck';
-require './lib/card';
+
+require "sinatra"
+require "sinatra/reloader"
+also_reload('lib/**/*.rb')

@@ -1,6 +1,8 @@
+require './lib/card'
+
 class Deck
   def initialize
-    @cards = load_deck
+    @cards = build_deck
     @current = nil
   end
   def cards
@@ -8,18 +10,6 @@ class Deck
   end
   def current
     @current
-  end
-
-  def load_deck
-    new_deck = []
-    i = 0
-    [:spades, :clubs, :hearts, :diamonds].each do |suit|
-      ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'].each do |value|
-        new_deck.push Card.new({suit: suit, value: value, index: i})
-        i += 1
-      end
-    end
-    return new_deck
   end
 
   def draw
@@ -37,5 +27,19 @@ class Deck
       @cards[rand_i] = @cards[i]
     end
     return @cards
+  end
+
+  private
+
+  def build_deck
+    new_deck = []
+    i = 0
+    [:spades, :clubs, :hearts, :diamonds].each do |suit|
+      ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'].each do |value|
+        new_deck.push Card.new({suit: suit, value: value, index: i})
+        i += 1
+      end
+    end
+    return new_deck
   end
 end
