@@ -10,12 +10,16 @@
 
 ## Instructions:
 
-* clone from Github, bundle Gemfile, launch with sinatra
-## Support and contact details
+* clone from Github
+* from project folder, open IRB in terminal
+* run command `require 'app.rb'`
+* create a new deck object with Deck.new
+* shuffle with Deck#shuffle
+* draw with Deck#draw
 
 ## Technologies Used
 
-_Made with Ruby on Sinatra, unit testing with rspec._
+_Made with Ruby, unit testing with rspec._
 
 ### License
 
