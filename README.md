@@ -12,10 +12,12 @@
 
 * clone from Github
 * from project folder, open IRB in terminal
-* run command `require 'app.rb'`
-* create a new deck object with Deck.new
+* launch interactive Ruby shell `irb`
+* load classes with command `require './app'`
+* create a new deck object with Deck#new
 * shuffle with Deck#shuffle
 * draw with Deck#draw
+* run test suite with `rspec` (exit IRB first)
 
 ## Technologies Used
 

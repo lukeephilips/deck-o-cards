@@ -3,20 +3,21 @@ require './lib/card'
 class Deck
   def initialize
     @cards = build_deck
-    @current = nil
+    @current_card = nil
   end
   def cards
     @cards
   end
-  def current
-    @current
+  def current_card
+    @current_card
   end
-  
+
   def draw
     if @cards.any?
-      return @current = @cards.shift
+      @current_card = @cards.shift
+      return "You drew a #{@current_card.value} of #{@current_card.suit}"
     else
-      return 'no more cards'
+      return 'There are no more cards'
     end
   end
   def shuffle

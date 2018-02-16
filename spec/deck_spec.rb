@@ -19,7 +19,7 @@ describe Deck do
     end
   end
   describe '#shuffle' do
-    it 'changes a random sample of three cards' do
+    it 'changes at least one of a random sample of three cards' do
       index = rand 51
       index1 = rand 51
       index2 = rand 51
@@ -34,12 +34,14 @@ describe Deck do
     end
   end
   describe '#draw' do
-    it 'returns a card' do
-      expect(@test_deck.draw.class).to eq Card
+    it 'returns a card string' do
+      expect(@test_deck.draw.class).to eq String
+      expect(@test_deck.draw).to include 'You drew a'
+
     end
     it 'returns empty when there are no more cards' do
       @test_deck.cards.clear
-      expect(@test_deck.draw).to eq 'no more cards'
+      expect(@test_deck.draw).to eq 'There are no more cards'
     end
   end
 end
